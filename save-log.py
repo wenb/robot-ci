@@ -15,7 +15,7 @@ def rename_move(filename, time, dst_path):
     list_filename = filename.split('.')
     new_filename = list_filename[0]+time+'.'+list_filename[1]
 
-    kwargs = {'shell': True, 'stdout': PIPE, 'stderr': PIPE, 'stderr': PIPE}
+    kwargs = {'shell': True, 'stdout': PIPE, 'stdin': PIPE, 'stderr': PIPE}
 
     if os.path.exists(filename):
         proc = Popen(
