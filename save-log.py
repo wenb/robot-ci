@@ -10,7 +10,7 @@ log_list = ['output.xml', 'log.html', 'report.html']
 str_now = str(now.strftime(time_format))
 
 
-def rename_move(filename, time, dst_path):
+def rename_copy(filename, time, dst_path):
 
     list_filename = filename.split('.')
     new_filename = list_filename[0] + time + '.' + list_filename[1]
@@ -28,4 +28,4 @@ def rename_move(filename, time, dst_path):
             print error
 
 for i in log_list:
-    rename_move(i, str_now, 'D:\\log\\')
+    rename_copy(i, str_now, 'D:\\log\\')
