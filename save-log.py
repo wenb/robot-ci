@@ -19,7 +19,7 @@ def rename_move(filename, time, dst_path):
 
     if os.path.exists(filename):
         proc = Popen(
-            ['rename', filename, new_filename, '&&',
+            ['copy', filename, new_filename, '&&',
                 'move', new_filename, dst_path],
             **kwargs
         )
