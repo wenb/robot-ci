@@ -13,13 +13,14 @@ str_now = str(now.strftime(time_format))
 def rename_move(filename, time, dst_path):
 
     list_filename = filename.split('.')
-    new_filename = list_filename[0]+time+'.'+list_filename[1]
+    new_filename = list_filename[0] + time + '.' + list_filename[1]
 
     kwargs = {'shell': True, 'stdout': PIPE, 'stdin': PIPE, 'stderr': PIPE}
 
     if os.path.exists(filename):
         proc = Popen(
-            ['rename', filename,  new_filename, '&&', 'move', new_filename, dst_path],
+            ['rename', filename, new_filename, '&&',
+                'move', new_filename, dst_path],
             **kwargs
         )
         out, error = proc.communicate()
@@ -27,4 +28,4 @@ def rename_move(filename, time, dst_path):
             print error
 
 for i in log_list:
-    rename_move(i, str_now, 'D:\\')
+    rename_move(i, str_now, 'D:\\log\\')
