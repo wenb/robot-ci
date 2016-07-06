@@ -8,4 +8,4 @@ test
     Open Browser    http://www.baidu.com    chrome
     Wait Until Page Contains    百度    15
     Close Browser
-    log  for demo
+    log  demo
